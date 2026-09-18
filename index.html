@@ -228,7 +228,7 @@
 </div>
     <div class="products">
 
-      <div class="product">
+      <div class="product" data-category="shirt">
       <div class="product-image">
   <img src="IMG-20260917-WA0091.jpg" alt="Classic T-Shirt">
 </div>
@@ -247,7 +247,7 @@
       </div>
 
 
-      <div class="product">
+      <div class="product" data-category="hoodie">
         <div class="product-image">
   <img src="IMG-20260917-WA0092.jpg" alt="Premium Hoodie">
 </div>
@@ -266,7 +266,7 @@
       </div>
 
 
-      <div class="product">
+      <div class="product" data-category="trouser">
         <div class="product-image">
   <img src="IMG-20260917-WA0093.jpg" alt="Stylish Trousers">
 </div>
@@ -285,7 +285,7 @@
       </div>
 
 
-      <div class="product">
+      <div class="product" data-category="shoes">
         <div class="product-image">
   <img src="IMG-20260917-WA0094.jpg" alt="Fashion Sneakers">
 </div>
@@ -329,6 +329,18 @@
   <footer>
     <p>© 2026 BAALAWY COLLECTION. All Rights Reserved.</p>
   </footer>
+<script>
+function filterProducts(category) {
+  const products = document.querySelectorAll(".product");
 
+  products.forEach(function(product) {
+    if (category === "all" || product.dataset.category === category) {
+      product.style.display = "block";
+    } else {
+      product.style.display = "none";
+    }
+  });
+}
+</script>
 </body>
 </html>
